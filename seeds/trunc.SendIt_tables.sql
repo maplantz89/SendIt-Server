@@ -1,0 +1,4 @@
+TRUNCATE 
+  users, 
+  climbs
+  RESTART IDENTITY CASCADE;
