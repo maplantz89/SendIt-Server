@@ -5,6 +5,11 @@ const ClimbsService = {
       .select('*')
       .where({'user_id' : id});
   },
+  getClimbById(db, climb_id){
+    return db
+      .from('climbs')
+      .where({'id': climb_id});
+  },
   insertClimb(db, newClimb){
     return db
       .insert(newClimb)
