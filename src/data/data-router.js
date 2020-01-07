@@ -61,10 +61,10 @@ dataRouter
   });
 
 dataRouter
-  .route('/:user_id/by_diff')
+  .route('/:user_id/by_diff/:diff')
   .get((req, res, next) => {
-    const { user_id } = req.params;
-    DataService.getProjectsPerDifficulty(req.app.get('db'), user_id)
+    const { user_id, diff } = req.params;
+    DataService.getProjectsPerDifficulty(req.app.get('db'), user_id, diff)
       .then(result => {
         return res.json(result);
       })
